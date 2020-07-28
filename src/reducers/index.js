@@ -1,6 +1,9 @@
 import { combineReducers } from "redux";
-import listReducer  from "../layout/users/list/reducer";
+import usersReducer from "../layout/users/reducers.js";
+import {reducer as toastrReducer} from 'react-redux-toastr'
+
 
 export default combineReducers({
-    list: listReducer,
+    users: usersReducer,
+    toastr: toastrReducer,
 })

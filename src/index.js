@@ -6,6 +6,7 @@ import "./style/scss/index.scss";
 import * as serviceWorker from './serviceWorker';
 import Layout from "./layout";
 import { store } from "./store";
+import ReduxToastr from "react-redux-toastr";
 
 
 ReactDOM.render(
@@ -14,6 +15,15 @@ ReactDOM.render(
           <BrowserRouter>
               <Layout/>
           </BrowserRouter>
+          <div>
+              <ReduxToastr
+                  preventDuplicates
+                  getState={(state) => state.toastr} // This is the default
+                  transitionIn="fadeIn"
+                  transitionOut="fadeOut"
+                  progressBar
+                  closeOnToastrClick/>
+          </div>
       </Provider>
   </React.StrictMode>,
   document.getElementById('root')
